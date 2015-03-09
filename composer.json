@@ -10,16 +10,28 @@
             "name": "Jay Leno",
             "email": "jay.leno@aurenav.com"
         },{
+<<<<<<< HEAD
             "name": "Leandro Gehlen",
             "email": "leandrogehlen@gmail.com"
+=======
+          "name": "Leandro Gehlen",
+          "email": "leandrogehlen@gmail.com"
+>>>>>>> origin/master
         }
     ],
     "minimum-stability": "dev",
     "require": {
+<<<<<<< HEAD
            "yiisoft/yii2": "*",
             "bower-asset/codemirror": "5.0.*"
         },
         "autoload": {
+=======
+        "yiisoft/yii2": "*",
+        "bower-asset/codemirror": "5.0.*"
+    },
+    "autoload": {
+>>>>>>> origin/master
         "psr-4": {
         "kochiro\\CodeMirror\\": ""
         }

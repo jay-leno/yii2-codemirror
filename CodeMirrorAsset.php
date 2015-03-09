@@ -17,6 +17,7 @@ use yii\web\AssetBundle;
  */
 class CodeMirrorAsset extends AssetBundle
 {
+<<<<<<< HEAD
    public $sourcePath = '@bower/codemirror';
 
    /**
@@ -28,4 +29,18 @@ class CodeMirrorAsset extends AssetBundle
       $this->js = array_merge(['lib/codemirror.js'], $this->js);
       $this->css = array_merge(['lib/codemirror.css'], $this->css);
    }
+=======
+    public $sourcePath = '@bower/codemirror';
+
+    /**
+     * Register required assets
+     */
+    public function init()
+    {
+        parent::init();
+        $this->js = array_merge(['lib/codemirror.js'], $this->js);
+        $this->css = array_merge(['lib/codemirror.css'], $this->css);
+    }
+
+>>>>>>> origin/master
 }
