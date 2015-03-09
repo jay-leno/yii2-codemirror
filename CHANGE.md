@@ -1,9 +1,14 @@
-version 1.1.0
+Yii2 CodeMirror Change log
+1.2.0 under development
 
-Date: 14-Jan-2015
+    Correct assets usage
+    Removed yii2-krajee-base dependencies
+    Refactored extension
+
+1.1.0 January 14, 2015
 
     Minor updates to clarify usage
 
-version 1.0.0
+1.0.0
 
-Initial release
+    Initial release
