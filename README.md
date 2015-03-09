@@ -18,11 +18,6 @@ Usage
 
 Once the extension is installed, simply use it in your code by :
 
-<<<<<<< HEAD
-=======
-```php
->>>>>>> origin/master
-
 <?php 
 
 use kochiro\CodeMirror\CodeMirror;
@@ -36,54 +31,20 @@ use kochiro\CodeMirror\CodeMirror;
 ]);
 
 ?>
-<<<<<<< HEAD
 
 By default, only core javascript and css files are registered:
 
     lib/codemirror.js
     lib/codemirror.css
 
-If it is necessary adds other resource files, then should be used the Dependency Injection concept.
+If it is necessary to add other resource files, then use the Dependency Injection concept.
 
 Example:
 
 I want to use php mode in the codemirror editor
 
-
   //config/web.php
 
-=======
-```
-
-By default, only core javascript and css files are registered:
-
-- ```lib/codemirror.js```
-- ```lib/codemirror.css```
-
-If it is necessary adds other resource files, then should be used the 
-[Dependency Injection](https://github.com/yiisoft/yii2/blob/master/docs/guide/concept-di-container.md) concept.
-
-Example:
-
-I want to use ```php``` mode in the codemirror editor 
-
-```php
-  
-  //config/web.php
-  
->>>>>>> origin/master
-  $config = [
-      'id' => 'my-app',
-      'components' => [
-        ...
-      ]
-      ...
-  ]
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> origin/master
   Yii::$container->set('kochiro\codemirror\CodeMirrorAsset',[
       'js' => [
           'mode/htmlmixed/htmlmixed.js',
@@ -93,14 +54,5 @@ I want to use ```php``` mode in the codemirror editor
           'mode/php/php.js',
       ]
   ]);
-<<<<<<< HEAD
-
 
   return $config;
-=======
-  
-  
-  return $config;
-  
-```
->>>>>>> origin/master
