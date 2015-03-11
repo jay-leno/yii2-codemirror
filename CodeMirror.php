@@ -2,75 +2,64 @@
 /**
  * @copyright Copyright &copy; Jay Leno, Aurenav.com, 2015
  * @package yii2-codemirror
- * @version 1.2.0
+ * @version 1.1.0
  */
-
+ 
 namespace kochiro\CodeMirror;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\helpers\Inflector;
-use yii\helpers\Json;
-use yii\widgets\InputWidget;
+use yii\web\View;
 
 /**
- * Renders a CodeMirror editor
- * @author Leandro Gehlen <leandrogehlen@gmail.com>
- * @since 1.2.0
+ * Implements a CodeMirror editor box
  */
-class CodeMirror extends InputWidget
+class CodeMirror extends \kartik\base\InputWidget
 {
-    /**
-     * @var array configuration options
-     * @see http://codemirror.net/doc/manual.html#config
-     */
-    public $pluginOptions = [];
+    public $script;
+    
+    public $name;
+    public $id;
+    public $value;
+    public $mode;
+    public $htmlOptions;
 
-    /**
-     * @inheritdoc
-     */
     public function init()
     {
         parent::init();
-        if (!isset($this->options['id'])){
-            $this->options['id'] = $this->getId();
-        }
 
-        $this->pluginOptions = ArrayHelper::merge([
-            'lineNumbers' => true,
-            'styleActiveLine' => true,
-            'matchBrackets' => true,
-            'lineWrapping' => true
-        ],$this->pluginOptions);
+        $this->renderInput();
+        $this->registerAssets();
+    }
+    
+    /**
+     * Renders the input
+     */
+    protected function renderInput()
+    {
+        // Add textarea to the page
+		echo Html::textArea( $this->name, $this->value, $this->htmlOptions );
 
+        // This block of script will change the textarea from above into a CodeMirror instance
+        $script = "<script>
+            var editor = CodeMirror.fromTextArea(document.getElementById('description_".$this->id."'), {
+                lineNumbers: true,
+                styleActiveLine: true,
+                matchBrackets: true,
+                lineWrapping: true
+            });
+            editor.setOption('theme', '".$this->htmlOptions['theme']."');
+        </script>";
+        
+        echo $script;
     }
 
     /**
-     * @inheritdoc
+     * Registers assets
      */
-    public function run()
+    protected function registerAssets()
     {
-        $hiddenId = ArrayHelper::remove($this->options, 'id');
-
-        if ($this->hasModel()) {
-            $value = Html::getAttributeValue($this->model, $this->attribute);
-            echo Html::activeHiddenInput($this->model, $this->attribute, ['id' => $hiddenId]);
-        } else {
-            $value = ArrayHelper::getValue($this->options, 'value');
-            echo Html::hiddenInput($this->name, $this->value, ['id' => $hiddenId]);
-        }
-
-        $id = $this->getId() . '-editor';
-        $this->options['id'] = $id;
-        $var = Inflector::variablize($id);
-        echo Html::textarea($this->name, $value, $this->options);
-
         $view = $this->getView();
         CodeMirrorAsset::register($view);
-
-        $options = Json::encode($this->pluginOptions);
-        $view->registerJs("var {$var} = CodeMirror.fromTextArea(document.getElementById('$id'), $options);");
-        $view->registerJs("{$var}.on('change', function(editor){jQuery('#$hiddenId').val(editor.getValue());});");
     }
 }

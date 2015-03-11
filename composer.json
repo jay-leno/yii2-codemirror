@@ -3,25 +3,20 @@
     "description": "CodeMirror extension for Yii2",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
-    "type": "yii2-extension",
+	"type": "yii2-extension",
     "license": "LGPL-3.0+",
     "authors": [
         {
             "name": "Jay Leno",
-            "email": "jay.leno@aurenav.com"
-        },{
-            "name": "Leandro Gehlen",
-            "email": "leandrogehlen@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "yiisoft/yii2": "*",
-        "bower-asset/codemirror": "5.0.*"
+        "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {
-        "kochiro\\CodeMirror\\": ""
+            "kochiro\\CodeMirror\\": ""
         }
     }
 }
