@@ -1,3 +1,9 @@
+version 1.2.0
+
+Date: 5-Aug-2015
+
+    Updated CodeMirror to 5.5.0
+
 version 1.1.0
 
 Date: 14-Jan-2015

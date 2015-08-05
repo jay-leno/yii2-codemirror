@@ -31,12 +31,12 @@ use kochiro\CodeMirror\CodeMirror;
 $mode = 'application/x-httpd-php';
 
 echo $form->field($file, 'description')->widget(CodeMirror::className(), [
-    'id' => $id,
+    'id' => $file->id,
     'name' => '[description][]'.$id,
-	'value' => $description,
+	'value' => $file->description,
     'mode' => $mode,
     'htmlOptions' => [
-        "id"=>'description_'.$id, 
+        "id"=>'description_'.$file->id, 
         "theme"=>'solarized dark' // set the theme based on the options in assets/theme, you must also include the corresponding css file in CodeMirrorAsset.php
     ]
 ]);
