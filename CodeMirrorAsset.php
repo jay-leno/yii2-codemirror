@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Jay Leno, Aurenav.com, 2015
+ * @copyright Copyright &copy; Jay Leno, 2015
  * @package yii2-codemirror
- * @version 1.1.0
+ * @version 1.2.0
  */
 
-namespace kochiro\codemirror;
+namespace kochiro\CodeMirror;
 use Yii;
 
 /**
  * CodeMirror bundle for \kochiro\CodeMirror
  *
- * @author Jay Leno <jay.leno@aurenav.com>
+ * @author Jay Leno <kochiro@gmail.com>
  * @since 1.0
  */
 class CodeMirrorAsset extends \kartik\base\AssetBundle
