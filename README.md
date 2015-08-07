@@ -25,7 +25,7 @@ Once the extension is installed, simply use it in your code by  :
 
 <?php 
 
-use kochiro\CodeMirror\CodeMirror; 
+use kochiro\codemirror\CodeMirror; 
 
 // set the mode based on the available options in assets/mode
 $mode = 'application/x-httpd-php';

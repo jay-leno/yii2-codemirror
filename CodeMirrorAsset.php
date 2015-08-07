@@ -8,6 +8,7 @@
 
 namespace kochiro\CodeMirror;
 use Yii;
+use yii\web\AssetBundle;
 
 /**
  * CodeMirror bundle for \kochiro\CodeMirror
@@ -15,13 +16,18 @@ use Yii;
  * @author Jay Leno <kochiro@gmail.com>
  * @since 1.0
  */
-class CodeMirrorAsset extends \kartik\base\AssetBundle
+class CodeMirrorAsset extends AssetBundle
 {
     // The JS includes must appear before the textarea so include them in the head
-    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    //public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    public $sourcePath = '@bower-asset/CodeMirror';
     
     public function init()
     {
+        parent::init();
+        $this->js = array_merge(['lib/codemirror.js'], $this->js);
+        $this->css = array_merge(['lib/codemirror.css'], $this->css);
+/*
         $this->setSourcePath(__DIR__ . '/assets');
         
         $this->setupAssets('js', [
@@ -60,5 +66,6 @@ class CodeMirrorAsset extends \kartik\base\AssetBundle
         ]);
         
         parent::init();
+*/
     }
 }
