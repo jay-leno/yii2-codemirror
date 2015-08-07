@@ -1,3 +1,9 @@
+version 1.2.1
+
+Date: 7-Aug-2015
+
+    Updated to use bower-asset/codemirror
+
 version 1.2.0
 
 Date: 5-Aug-2015

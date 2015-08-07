@@ -1,5 +1,9 @@
 # Yii2 CodeMirror Change log
 
+## 1.2.1 August 7, 2015
+
+- Update to use bower-asset/codemirror
+
 ## 1.2.0 August 5, 2015
 
 - Update to CodeMirror 5.5.0

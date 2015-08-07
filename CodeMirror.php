@@ -2,7 +2,7 @@
 /**
  * @copyright Copyright &copy; Jay Leno, 2015
  * @package yii2-codemirror
- * @version 1.2.0
+ * @version 1.2.1
  */
  
 namespace kochiro\codemirror;
